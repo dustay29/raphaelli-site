@@ -1,0 +1,453 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: #fff; /* ou a cor que quiser */
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  color: #333;
+    background-color: #fff; /* branco ou outra cor base que quiser */
+}
+
+header {
+  background-color: #4e004a;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header img {
+  height: 60px;
+  width: 150px;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #ffbb00;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #d0953f;
+}
+
+.hero {
+  background: url('https://solopromotora.com.br/images/banner-site.jpeg') no-repeat center center/cover;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+
+section {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #d0953f;
+}
+
+.content p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+footer {
+  background-color: #1e1e1e;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+footer p {
+  margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+    padding: 15px;
+  }
+
+  nav a {
+    margin-left: 10px;
+  }
+}
+
+.slider {
+  margin: 0;
+  padding: 0;
+  height: 600px; /* ou a altura que você quiser */
+  position: relative;
+  overflow: hidden;
+}
+
+.slides {
+  height: 100%;
+  position: relative;
+}
+
+.slide {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 0;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+button.prev,
+button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+button.prev {
+  left: 20px;
+}
+
+button.next {
+  right: 20px;
+}
+.container {
+  max-width: 1000px; /* Limite de largura */
+  margin: 0 auto; /* Centraliza o conteúdo */
+  padding: 0 20px; /* Respiro nas laterais */
+}
+
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+  gap: 10px; /* Espaçamento entre os blocos */
+  margin-top: 20px;
+}
+
+.produto {
+  background-color: #4e004a; /* Roxo padrão */
+  color: white;
+  padding: 20px; /* Espaçamento interno */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px; /* Altura confortável */
+  border-radius: 4px; /* Bordas levemente arredondadas */
+}
+
+.produto.verde {
+  background-color: #7ac283; /* Verde para o último bloco */
+}
+
+.produto .icone {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.produto h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.produto p {
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.container-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #333;
+
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  color: #4e004a;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.botao {
+  background: #7ac283;
+  color: #fff;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.botao:hover {
+  background: #68a96b;
+}
+
+#simulacao {
+  max-width: 600px;
+  margin: 20px auto;
+  background: #eee;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#simulacao h2 {
+  color: #4e004a;
+}
+
+#form-simulacao select,
+#form-simulacao input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#sobre {
+  padding: 60px 20px;
+  background: #f5f5f5; /* cor de fundo suave */
+}
+
+.container-sobre {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  
+}
+
+.imagem-sobre img {
+  max-width: 100%;
+  border-radius: 10px; /* opcional */
+}
+
+.texto-sobre {
+  flex: 1;
+}
+
+.texto-sobre h2 {
+  color: #4e004a;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  display: inline-block;
+  background: #888;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.texto-sobre p {
+  margin-bottom: 15px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.botao {
+  display: inline-block;
+  background: #7ac283;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.botao:hover {
+  background: #68a96b;
+}
+
+.whatsapp-button {
+  position: fixed;
+  width: 65px;
+  height: 65px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #2ca41c;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+.whatsapp-button img {
+  width: 35px;
+  height: 35px;
+  filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.2));
+}
+
+.whatsapp-widget {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 320px;
+  background: linear-gradient(135deg, #ffffff, #f0f0f0);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  padding: 20px;
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1001;
+  animation: fadeIn 0.5s ease forwards;
+  font-family: 'Montserrat', sans-serif;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.widget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 10px 10px 0 0;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.widget-header button {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  transition: background 0.3s;
+}
+
+.widget-header button:hover {
+  background: rgba(255,255,255,0.4);
+}
+
+.atendente {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.atendente:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.atendente img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #25d366;
+}
+
+.atendente small {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+.atendente a {
+  font-weight: 600;
+  color: #128c7e;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.atendente a:hover {
+  text-decoration: underline;
+}
+
+.whatsapp-widget p {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.whatsapp-widget small {
+  font-size: 0.75rem;
+  color: #888;
+  text-align: center;
+}
+
+
